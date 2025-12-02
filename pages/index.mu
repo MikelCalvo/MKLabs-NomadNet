@@ -1,17 +1,8 @@
 #!/usr/bin/env python3
+import os
+from views.header import get_header
 
-TEMPLATE_MAIN = """                                                                     
-                                                                     
-`c ██████   ██████ █████   ████ █████                 █████            
-`c`F00a░░`f██████ ██████ `F00a░░`f███   ███`F00a░`f `F00a░░`f███                 `F00a░░`f███             
-`c `F00a░`f███`F00a░`f█████`F00a░`f███  `F00a░`f███  ███    `F00a░`f███         ██████   `F00a░`f███████   █████ 
-`c `F00a░`f███`F00a░░`f███ `F00a░`f███  `F00a░`f███████     `F00a░`f███        `F00a░░░░░`f███  `F00a░`f███`F00a░░`f███ ███`F00a░░`f  
-`c `F00a░`f███ `F00a░░░`f  `F00a░`f███  `F00a░`f███`F00a░░`f███    `F00a░`f███         ███████  `F00a░`f███ `F00a░`f███`F00a░░`f█████ 
-`c `F00a░`f███      `F00a░`f███  `F00a░`f███ `F00a░░`f███   `F00a░`f███      █ ███`F00a░░`f███  `F00a░`f███ `F00a░`f███ `F00a░░░░`f███
-`c █████     █████ █████ `F00a░░`f████ ███████████`F00a░░`f████████ ████████  ██████ 
-`c`F00a░░░░░`f     `F00a░░░░░`f `F00a░░░░░`f   `F00a░░░░`f `F00a░░░░░░░░░░░`f  `F00a░░░░░░░░`f `F00a░░░░░░░░`f  `F00a░░░░░░`f  
-                                                                     
-                                                                     
+TEMPLATE_MAIN = """{header}
 `F00a
 -━
 `f
@@ -43,5 +34,9 @@ Or paste the following in your ~/.reticulum/config file:
 Public Propagation Node Address: `!5381d942a5ed27f3e48452b7f57f6108`!
 """
 
+FILE = os.path.splitext(os.path.basename(__file__))[0]
+
 tpl = TEMPLATE_MAIN
+tpl = tpl.replace("{self}", FILE)
+tpl = tpl.replace("{header}", get_header())
 print(tpl)
