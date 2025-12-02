@@ -20,6 +20,20 @@ It's still a work in progress, but you can already test it at the following addr
 - [ ] Add basic system info to the status page
 - [ ] Add a guestbook page
 
+### Analytics script
+
+There is a small helper script to inspect page visits stored in `pages/data/visits.json`:
+
+```bash
+python3 scritps/analytics.py
+```
+
+It prints a nicely formatted summary with:
+
+- Total visits per page (sorted by most visited)
+- First and last visit timestamps per page
+- Overall number of log records and global time range
+
 ### What is Nomad Network?
 
 Nomad Network (NomadNet) is a terminal-based hypertext system for communicating and sharing content over delay-tolerant mesh and long-range radio networks.  
