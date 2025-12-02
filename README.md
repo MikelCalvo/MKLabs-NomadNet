@@ -8,6 +8,12 @@ It's still a work in progress, but you can already test it at the following addr
 3c81447dff85b425c79ca5a97ff75f75:/page/index.mu
 ```
 
+### Website Features
+
+- An isolated ccomponent for the logo
+- An isolated component for the topbar, with current page automatically highlighted
+- An isolated component for the footer, with the number of visits to each page
+
 ### Project Roadmap
 
 - [ ] Find an alternative header logo, current is broken on NomadNet (works on Meshchat)
@@ -25,3 +31,10 @@ More info and source code: [`NomadNet on GitHub`](https://github.com/markqvist/N
 Reticulum is a cryptographically secure networking stack built for resilient, censorship-resistant and delay-tolerant networks.  
 It allows you to build mesh networks over many different physical transports (LoRa, packet radio, Ethernet, IP, serial links, etc.).  
 More info and source code: [`Reticulum on GitHub`](https://github.com/markqvist/Reticulum).
+
+### Thanks to
+
+- [@markqvist](https://github.com/markqvist) for creating Reticulum & Nomad Network
+- [@liamcottle](https://github.com/liamcottle/reticulum-meshchat) for creating Meshchat
+- [@SebastianObiwan](https://github.com/SebastianObiwan) for creating the base page template I used as a starting point
+- [Spanish Reticulum Telegram channel](https://t.me/Reticulum_es) for helping me with my questions and testing the website
