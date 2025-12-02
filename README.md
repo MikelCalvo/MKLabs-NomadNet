@@ -20,6 +20,16 @@ It's still a work in progress, but you can already test it at the following addr
 - [ ] Add basic system info to the status page
 - [ ] Add a guestbook page
 
+### Setup helper
+
+To copy the pages and scripts into your local NomadNet storage, run the interactive setup:
+
+```bash
+python3 setup.py
+```
+
+You can choose the storage directory (defaults to `~/.nomadnetwork/storage`) and decide how to handle file collisions (keep your current file or overwrite with the project version).
+
 ### Analytics script
 
 There is a small helper script to inspect page visits stored in `pages/data/visits.json`:
