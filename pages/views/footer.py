@@ -5,15 +5,14 @@ import os
 import time
 from typing import List, Dict, Any
 
-# Base directory of the project (one level above "pages")
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "data")
-LOG_FILE = os.path.join(DATA_DIR, "visits.json")
+# NomadNet storage path for analytics
+STORAGE_DIR = os.path.expanduser("~/.nomadnetwork/storage")
+LOG_FILE = os.path.join(STORAGE_DIR, "pages_analytics.json")
 
 
-def _ensure_data_dir() -> None:
+def _ensure_storage_dir() -> None:
     try:
-        os.makedirs(DATA_DIR, exist_ok=True)
+        os.makedirs(STORAGE_DIR, exist_ok=True)
     except OSError:
         pass
 
@@ -39,7 +38,7 @@ def _save_visits(entries: List[Dict[str, Any]]) -> None:
 
 
 def _register_visit(page: str) -> int:
-    _ensure_data_dir()
+    _ensure_storage_dir()
 
     entries = _load_visits()
     entries.append(

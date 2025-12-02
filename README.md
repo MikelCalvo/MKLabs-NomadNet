@@ -32,7 +32,7 @@ You can choose the storage directory (defaults to `~/.nomadnetwork/storage`) and
 
 ### Analytics script
 
-There is a small helper script to inspect page visits stored in `pages/data/visits.json`:
+There is a small helper script to inspect page visits stored in `~/.nomadnetwork/storage/pages_analytics.json`:
 
 ```bash
 python3 scritps/analytics.py

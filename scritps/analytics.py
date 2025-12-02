@@ -8,9 +8,7 @@ from typing import Any, Dict, List
 
 
 def _get_log_file() -> str:
-    base_dir = os.path.dirname(os.path.abspath(__file__))  # .../MKLabs-NomadNet/scritps
-    log_file = os.path.join(base_dir, "..", "pages", "data", "visits.json")
-    return os.path.abspath(log_file)
+    return os.path.expanduser("~/.nomadnetwork/storage/pages_analytics.json")
 
 
 def _load_visits(path: str) -> List[Dict[str, Any]]:
