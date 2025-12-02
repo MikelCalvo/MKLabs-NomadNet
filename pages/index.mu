@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 import os
+from views.topbar import get_topbar
 from views.header import get_header
 
 TEMPLATE_MAIN = """{header}
-`F00a
--━
-`f
-`c<`_`!`[HOME`3c81447dff85b425c79ca5a97ff75f75:/page/index.mu]`!`_> <`!`[OPERATOR INFO`3c81447dff85b425c79ca5a97ff75f75:/page/operator.mu]`!> <`!`[STATUS`3c81447dff85b425c79ca5a97ff75f75:/page/status.mu]`!> <`!`[SOURCE`3c81447dff85b425c79ca5a97ff75f75:/page/source.mu]`!>`
-`F00a
--━
-`f
+{topbar}
 
 `lThis is an experimental website.
 More stuff will be added in the future.
@@ -39,4 +34,5 @@ FILE = os.path.splitext(os.path.basename(__file__))[0]
 tpl = TEMPLATE_MAIN
 tpl = tpl.replace("{self}", FILE)
 tpl = tpl.replace("{header}", get_header())
+tpl = tpl.replace("{topbar}", get_topbar(FILE))
 print(tpl)
