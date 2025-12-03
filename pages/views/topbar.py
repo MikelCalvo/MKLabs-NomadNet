@@ -1,28 +1,43 @@
 #!/usr/bin/env python3
 
-LINKS = [
-    ("HOME", "index"),
-    ("OPERATOR INFO", "operator"),
-    ("STATUS", "status"),
-    ("SOURCE", "source"),
-]
+import os
+import sys
+from typing import List, Tuple
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+from utils.config_loader import get_config
 
 
-def _build_link(label: str, page: str, current: str) -> str:
-    base = f"`!`[{label}`3c81447dff85b425c79ca5a97ff75f75:/page/{page}.mu]`!`"
+config = get_config()
+node_hash = config.get("nomadnet", "node_hash", default="")
+logo_color = config.get("ui", "logo_color", default="`F00a")
+color_reset = config.get("ui", "color_reset", default="`f")
+topbar_divider = config.get("ui", "topbar_divider", default="-━")
+
+
+def get_navigation_links() -> List[Tuple[str, str]]:
+    links_config = config.get("topbar", "links", default=[])
+    return [(link["label"], link["page"]) for link in links_config]
+
+
+def build_link(label: str, page: str, current: str) -> str:
+    base = f"`!`[{label}`{node_hash}:/page/{page}.mu]`!`"
     if page == current:
         return f"<`_{base}_>"
     return f"<{base}\>"
 
 
 def get_topbar(current: str) -> str:
-    links = " ".join(_build_link(label, page, current) for label, page in LINKS)
+    links = get_navigation_links()
+    links_html = " ".join(build_link(label, page, current) for label, page in links)
+    
     return (
-        "`F00a\n"
-        "-━\n"
-        "`f\n"
-        f"`c{links}\n"
-        "`F00a\n"
-        "-━\n"
-        "`f"
+        f"{logo_color}\n"
+        f"{topbar_divider}\n"
+        f"{color_reset}\n"
+        f"`c{links_html}\n"
+        f"{logo_color}\n"
+        f"{topbar_divider}\n"
+        f"{color_reset}"
     )

@@ -1,0 +1,38 @@
+{
+  "nomadnet": {
+    "node_hash": "3c81447dff85b425c79ca5a97ff75f75",
+    "storage_path": "~/.nomadnetwork/storage"
+  },
+  "reticulum": {
+    "tcp_host": "lab.mikelcalvo.net",
+    "tcp_port": 4242,
+    "propagation_node": "5381d942a5ed27f3e48452b7f57f6108"
+  },
+  "operator": {
+    "content": "I'm Mikel Calvo, a software developer from the Basque Country.\nYou can check out my personal website at `!www.mikelcalvo.net`!\nYou can also shoot me a message at: `!lxmf@704a9988aacb09b811740d8eedf5e705`!"
+  },
+  "ui": {
+    "logo_color": "`F00a",
+    "color_reset": "`f",
+    "topbar_divider": "-━",
+    "date_format": "%Y-%m-%d %H:%M:%S"
+  },
+  "topbar": {
+    "links": [
+      { "label": "HOME", "page": "index" },
+      { "label": "OPERATOR INFO", "page": "operator" },
+      { "label": "STATUS", "page": "status" },
+      { "label": "SOURCE", "page": "source" }
+    ]
+  },
+  "analytics": {
+    "log_file": "~/.nomadnetwork/storage/pages_analytics.json"
+  },
+  "system": {
+    "rnstatus_command": "~/.local/bin/rnstatus",
+    "rnstatus_args": ["-t"]
+  },
+  "repository": {
+    "url": "https://github.com/MikelCalvo/MKLabs-NomadNet"
+  }
+}

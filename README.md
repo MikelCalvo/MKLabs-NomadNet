@@ -10,15 +10,29 @@ It's still a work in progress, but you can already test it at the following addr
 
 ### Website Features
 
-- An isolated ccomponent for the logo
+- An isolated component for the logo
 - An isolated component for the topbar, with current page automatically highlighted
 - An isolated component for the footer, with the number of visits to each page
+- Centralized configuration system with `config.json`
+- Modular code structure with proper separation of concerns
 
 ### Project Roadmap
 
 - [ ] Find an alternative header logo, current is broken on NomadNet (works on Meshchat)
 - [ ] Add basic system info to the status page
 - [ ] Add a guestbook page
+
+### Configuration
+
+The project uses a centralized configuration file `config.json` where you can customize:
+
+- Node hash and connection details
+- Operator information (name, location, contact)
+- UI colors and formatting
+- Navigation links
+- System commands and paths
+
+Edit `config.json` to personalize your website before deploying.
 
 ### Setup helper
 
@@ -35,7 +49,7 @@ You can choose the storage directory (defaults to `~/.nomadnetwork/storage`) and
 There is a small helper script to inspect page visits stored in `~/.nomadnetwork/storage/pages_analytics.json`:
 
 ```bash
-python3 scritps/analytics.py
+python3 scripts/analytics.py
 ```
 
 It prints a nicely formatted summary with:
