@@ -11,6 +11,13 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+script_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(script_dir)
+
+if os.path.basename(script_dir) == "scripts" and os.path.exists(os.path.join(parent_dir, "pages", "utils")):
+    sys.path.insert(0, os.path.join(parent_dir, "pages"))
+else:
+    sys.path.insert(0, parent_dir)
 
 from utils.config_loader import get_config
 
